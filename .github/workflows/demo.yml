@@ -1,0 +1,19 @@
+name: Demo workflow
+run-name: Demo Workflow ${{ github.jobid }}
+
+defaults:
+  run:
+    shell: pwsh
+
+on: [push, workflow_dispatch]
+
+jobs:
+  demo:
+    name: "Demo job"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.2
+         
+      - run: |
+            echo YAY!
